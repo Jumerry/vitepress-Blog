@@ -47,7 +47,7 @@ export default defineConfig({
         sidebar,
         // 社交链接
         socialLinks: [
-            {icon: 'github', link: 'https://github.com/vuejs/vitepress'}
+            {icon: 'github', link: 'https://github.com/Jumerry/vitepress-Blog'}
         ],
         // 部署的时候需要注意该参数避免样式丢失
         base: "/vitepress-blog-template/",
