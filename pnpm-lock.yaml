@@ -1575,7 +1575,7 @@ snapshots:
       - stylus
       - sugarss
       - terser
-      - typescript
+      - typeScript
       - universal-cookie
 
   vue-demi@0.14.10(vue@3.5.8):

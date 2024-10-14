@@ -1,5 +1,7 @@
 ---
 outline: deep
+title: ES6知识点
+date: 2024-10-14
 ---
 
 # ES6知识点

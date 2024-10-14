@@ -15,7 +15,7 @@ export default defineConfig({
             level: [2, 6],
             label: "目录",
         },
-        //自定义上下页名
+        // 自定义上下页名
         docFooter: {
             prev: "上一页",
             next: "下一页",

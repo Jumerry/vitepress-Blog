@@ -12,13 +12,13 @@ hero:
   actions:
     - theme: brand
       text: Get Started
-      link: /markdown-examples
+      link: /nav/
     - theme: alt
       text: View on GitHub
-      link: /api-examples
+      link: https://github.com/Jumerry/vitepress-Blog
     - theme: brand
       text: 打赏作者
-      link: https://github.com/sponsors/Jumerry
+      link: /Tipping
 
 features:
   - title: 站点导航
@@ -29,7 +29,7 @@ features:
   - title: 前端开发
     icon: 📖
     details: 整理记录前端常用知识点、常用工具、前端资源等
-    link: /frontend/ES6/
+    link: /frontend/javaScript/ES6/
     linkText: 查看详情
   - title: 后端开发
     icon: 📘
@@ -44,7 +44,7 @@ features:
   - title: 旁门左道
     icon: 💯
     details: 工欲善其事，必先利其器<br /> 记录开发和日常使用中所用到的软件、插件、扩展等
-    link: /software/
+    link: /software/Git操作命令/
     linkText: 查看详情
   - title: 踩坑记录
     icon: 💡

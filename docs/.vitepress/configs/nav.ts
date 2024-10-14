@@ -6,20 +6,19 @@ export const nav: DefaultTheme.Config['nav'] = [
     {
         text: '前端开发',
         items: [
-            {text: 'ES6', link: '/frontend/ES6/'},
-            {text: 'React', link: '/frontend/react/'},
-            {text: 'JavaScript', link: '/frontend/javascript/'},
+            {text: 'JavaScript', link: '/frontend/javaScript/ES6知识点/'},
+            {text: 'TypeScript', link: '/frontend/typeScript/TS知识点'},
+            {text: 'Vue', link: '/frontend/vue/Vue3 开发文档/'},
         ]
     },
     {
         text: '后端开发',
         items: [
-            {text: 'Oracle', link: '/backend/oracle/'},
-            {text: 'MySQL', link: '/backend/mysql/'},
-            {text: 'docker', link: '/backend/docker/'},
+            {text: '数据库', link: '/backend/database/'},
+            {text: 'Docker', link: '/backend/docker/'},
         ]
     },
-    {text: '深入源码', link: '/markdown-examples'},
-    {text: "旁门左道", link: '/software/'},
+    {text: '深入源码', link: '/deep-source'},
+    {text: "旁门左道", link: '/software/Git操作命令/'},
     {text: "踩坑记录", link: '/bug-record/'},
 ]
