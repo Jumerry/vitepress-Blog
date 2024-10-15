@@ -9,6 +9,7 @@ export const nav: DefaultTheme.Config['nav'] = [
             {text: 'JavaScript', link: '/frontend/javaScript/ES6知识点/'},
             {text: 'TypeScript', link: '/frontend/typeScript/TS知识点'},
             {text: 'Vue', link: '/frontend/vue/Vue3 开发文档/'},
+            {text: 'CSS', link: '/frontend/css/Scss用法'}
         ]
     },
     {

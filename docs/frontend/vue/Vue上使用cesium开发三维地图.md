@@ -8,30 +8,30 @@ title: Vue上使用cesium开发三维地图
 ### 一、地图加载
 
 效果如下：
-![cesium2.gif](..%2F..%2Fpublic%2Fimg%2F1.gif)
+![1.gif](images%2FVue%E4%B8%8A%E4%BD%BF%E7%94%A8cesium%E5%BC%80%E5%8F%91%E4%B8%89%E7%BB%B4%E5%9C%B0%E5%9B%BE%2F1.gif)
 #### 官方文档介绍
 
 看着[官网的文档](https://cesium.com/learn/cesiumjs-learn/cesiumjs-quickstart/)，地图实例是这样创建下来的，见下图：
 
-![2.png](..%2F..%2Fpublic%2Fimg%2F2.png)
+![2.png](images%2FVue%E4%B8%8A%E4%BD%BF%E7%94%A8cesium%E5%BC%80%E5%8F%91%E4%B8%89%E7%BB%B4%E5%9C%B0%E5%9B%BE%2F2.png)
 
 但是`cesium`的`Viewer方法`中，是可以设置不少参数的，我们打开`cesium`的`API文档`看看
 
-![3.png](..%2F..%2Fpublic%2Fimg%2F3.png)
+![3.png](images%2FVue%E4%B8%8A%E4%BD%BF%E7%94%A8cesium%E5%BC%80%E5%8F%91%E4%B8%89%E7%BB%B4%E5%9C%B0%E5%9B%BE%2F3.png)
 
-![4.png](..%2F..%2Fpublic%2Fimg%2F4.png)
+![4.png](images%2FVue%E4%B8%8A%E4%BD%BF%E7%94%A8cesium%E5%BC%80%E5%8F%91%E4%B8%89%E7%BB%B4%E5%9C%B0%E5%9B%BE%2F4.png)
 
 
 击上图的这个`Viewer.ConstructorOptions` 配置项看看
 
-![5.png](..%2F..%2Fpublic%2Fimg%2F5.png)
+![5.png](images%2FVue%E4%B8%8A%E4%BD%BF%E7%94%A8cesium%E5%BC%80%E5%8F%91%E4%B8%89%E7%BB%B4%E5%9C%B0%E5%9B%BE%2F5.png)
 
 
 #### 开始
 
 实际开发中，都是开局一张展开的地图，屏幕上就是一张地图，其他什么都没有，效果如下图：
 
-![6.png](..%2F..%2Fpublic%2Fimg%2F6.png)
+![6.png](images%2FVue%E4%B8%8A%E4%BD%BF%E7%94%A8cesium%E5%BC%80%E5%8F%91%E4%B8%89%E7%BB%B4%E5%9C%B0%E5%9B%BE%2F6.png)
 
 贴上代码：<span style="color:orange">cesiumMap.vue</span>
 
@@ -103,13 +103,13 @@ http://webst02.is.autonavi.com/appmaptile?x={x}&y={y}&z={z}&lang=zh_cn&size=1&sc
 
 因为我们关掉了默认的图层切换按钮，所以我们需要给他配上这个地图源
 
-![7.png](..%2F..%2Fpublic%2Fimg%2F7.png)
+![7.png](images%2FVue%E4%B8%8A%E4%BD%BF%E7%94%A8cesium%E5%BC%80%E5%8F%91%E4%B8%89%E7%BB%B4%E5%9C%B0%E5%9B%BE%2F7.png)
 
-![8.png](..%2F..%2Fpublic%2Fimg%2F8.png)
+![8.png](images%2FVue%E4%B8%8A%E4%BD%BF%E7%94%A8cesium%E5%BC%80%E5%8F%91%E4%B8%89%E7%BB%B4%E5%9C%B0%E5%9B%BE%2F8.png)
 
 我们配置地图源调用的是这个方法`Cesium.UrlTemplateImageryProvider`
 
-![9.png](..%2F..%2Fpublic%2Fimg%2F9.png)
+![9.png](images%2FVue%E4%B8%8A%E4%BD%BF%E7%94%A8cesium%E5%BC%80%E5%8F%91%E4%B8%89%E7%BB%B4%E5%9C%B0%E5%9B%BE%2F9.png)
 
 
 #### 定位
@@ -122,13 +122,13 @@ http://webst02.is.autonavi.com/appmaptile?x={x}&y={y}&z={z}&lang=zh_cn&size=1&sc
 
 定位操作，要先设置一个区域，作为初始位置，确定区域的方法是`BoundingSphere`
 
-![10.png](..%2F..%2Fpublic%2Fimg%2F10.png)
+![10.png](images%2FVue%E4%B8%8A%E4%BD%BF%E7%94%A8cesium%E5%BC%80%E5%8F%91%E4%B8%89%E7%BB%B4%E5%9C%B0%E5%9B%BE%2F10.png)
 
 然后要定位到这个初始位置，`new Cesium.Camera.flyTo`
 
-![11.png](..%2F..%2Fpublic%2Fimg%2F11.png)
+![11.png](images%2FVue%E4%B8%8A%E4%BD%BF%E7%94%A8cesium%E5%BC%80%E5%8F%91%E4%B8%89%E7%BB%B4%E5%9C%B0%E5%9B%BE%2F11.png)
 
-![12.png](..%2F..%2Fpublic%2Fimg%2F12.png)
+![12.png](images%2FVue%E4%B8%8A%E4%BD%BF%E7%94%A8cesium%E5%BC%80%E5%8F%91%E4%B8%89%E7%BB%B4%E5%9C%B0%E5%9B%BE%2F12.png)
 
 贴上代码：<span style="color:orange">cesiumMap.vue</span>
 
@@ -182,7 +182,7 @@ export default {
 
 效果如下：
 
-![13.gif](..%2F..%2Fpublic%2Fimg%2F13.gif)
+![13.gif](images%2FVue%E4%B8%8A%E4%BD%BF%E7%94%A8cesium%E5%BC%80%E5%8F%91%E4%B8%89%E7%BB%B4%E5%9C%B0%E5%9B%BE%2F13.gif)
 
 
 
@@ -190,7 +190,7 @@ export default {
 
 因为这个创建出来的`实例 viewer`，只在`init方法`中，我们接下来要经常用到它，所以我们把这个`viewer`对象，提升到`data`中
 
-![14.png](..%2F..%2Fpublic%2Fimg%2F14.png)
+![14.png](images%2FVue%E4%B8%8A%E4%BD%BF%E7%94%A8cesium%E5%BC%80%E5%8F%91%E4%B8%89%E7%BB%B4%E5%9C%B0%E5%9B%BE%2F14.png)
 
 
 
@@ -198,7 +198,7 @@ export default {
 
 效果如下：
 
-![15.png](..%2F..%2Fpublic%2Fimg%2F15.png)
+![15.png](images%2FVue%E4%B8%8A%E4%BD%BF%E7%94%A8cesium%E5%BC%80%E5%8F%91%E4%B8%89%E7%BB%B4%E5%9C%B0%E5%9B%BE%2F15.png)
 
 首先讲下，`entities`实体，通俗的讲，一个三维地图上，上面可以`放`一些`模型`，比方说，`放`一个`房子模型`，`放`一个`工厂模型`，这个房子，工厂，肉眼看上去，就是放在了地图上，你鼠标不管怎么移动视角，都看到这个房子，工厂，是和地图绑定在一块的。房子，工厂都是和地图一起移动的。这个我们人眼看到的`模型`，在cesium里面有个学名，就叫`实体`。
 
@@ -206,13 +206,13 @@ export default {
 
 #### entities
 
-![16.png](..%2F..%2Fpublic%2Fimg%2F16.png)
+![16.png](images%2FVue%E4%B8%8A%E4%BD%BF%E7%94%A8cesium%E5%BC%80%E5%8F%91%E4%B8%89%E7%BB%B4%E5%9C%B0%E5%9B%BE%2F16.png)
 
-![17.png](..%2F..%2Fpublic%2Fimg%2F17.png)
+![17.png](images%2FVue%E4%B8%8A%E4%BD%BF%E7%94%A8cesium%E5%BC%80%E5%8F%91%E4%B8%89%E7%BB%B4%E5%9C%B0%E5%9B%BE%2F17.png)
 
 > entities的属性
 
-![18.gif](..%2F..%2Fpublic%2Fimg%2F18.gif)
+![18.gif](images%2FVue%E4%B8%8A%E4%BD%BF%E7%94%A8cesium%E5%BC%80%E5%8F%91%E4%B8%89%E7%BB%B4%E5%9C%B0%E5%9B%BE%2F18.gif)
 
 
 
@@ -337,13 +337,13 @@ export default {
 
 效果如下：
 
-![19.png](..%2F..%2Fpublic%2Fimg%2F19.png)
+![19.png](images%2FVue%E4%B8%8A%E4%BD%BF%E7%94%A8cesium%E5%BC%80%E5%8F%91%E4%B8%89%E7%BB%B4%E5%9C%B0%E5%9B%BE%2F19.png)
 
 点位的图标 和 文字样式明显不协调，我们把文字的样式再改改
 
-![20.png](..%2F..%2Fpublic%2Fimg%2F20.png)
+![20.png](images%2FVue%E4%B8%8A%E4%BD%BF%E7%94%A8cesium%E5%BC%80%E5%8F%91%E4%B8%89%E7%BB%B4%E5%9C%B0%E5%9B%BE%2F20.png)
 
-![21.png](..%2F..%2Fpublic%2Fimg%2F21.png)
+![21.png](images%2FVue%E4%B8%8A%E4%BD%BF%E7%94%A8cesium%E5%BC%80%E5%8F%91%E4%B8%89%E7%BB%B4%E5%9C%B0%E5%9B%BE%2F21.png)
 
 ```javascript
 label: {
@@ -361,7 +361,7 @@ label: {
 
 修改过后效果：
 
-![22.png](..%2F..%2Fpublic%2Fimg%2F22.png)
+![22.png](images%2FVue%E4%B8%8A%E4%BD%BF%E7%94%A8cesium%E5%BC%80%E5%8F%91%E4%B8%89%E7%BB%B4%E5%9C%B0%E5%9B%BE%2F22.png)
 
 
 
@@ -369,7 +369,7 @@ label: {
 
 效果如下：
 
-![23.gif](..%2F..%2Fpublic%2Fimg%2F23.gif)
+![23.gif](images%2FVue%E4%B8%8A%E4%BD%BF%E7%94%A8cesium%E5%BC%80%E5%8F%91%E4%B8%89%E7%BB%B4%E5%9C%B0%E5%9B%BE%2F23.gif)
 
 
 
@@ -377,15 +377,15 @@ label: {
 
 `ScreenSpaceEventHandler`
 
-![24.png](..%2F..%2Fpublic%2Fimg%2F24.png)
+![24.png](images%2FVue%E4%B8%8A%E4%BD%BF%E7%94%A8cesium%E5%BC%80%E5%8F%91%E4%B8%89%E7%BB%B4%E5%9C%B0%E5%9B%BE%2F24.png)
 
 `ScreenSpaceEventType`
 
-![25.png](..%2F..%2Fpublic%2Fimg%2F25.png)
+![25.png](images%2FVue%E4%B8%8A%E4%BD%BF%E7%94%A8cesium%E5%BC%80%E5%8F%91%E4%B8%89%E7%BB%B4%E5%9C%B0%E5%9B%BE%2F25.png)
 
-![26.png](..%2F..%2Fpublic%2Fimg%2F26.png)
+![26.png](images%2FVue%E4%B8%8A%E4%BD%BF%E7%94%A8cesium%E5%BC%80%E5%8F%91%E4%B8%89%E7%BB%B4%E5%9C%B0%E5%9B%BE%2F26.png)
 
-![27.png](..%2F..%2Fpublic%2Fimg%2F27.png)
+![27.png](images%2FVue%E4%B8%8A%E4%BD%BF%E7%94%A8cesium%E5%BC%80%E5%8F%91%E4%B8%89%E7%BB%B4%E5%9C%B0%E5%9B%BE%2F27.png)
 
 
 
@@ -393,9 +393,9 @@ label: {
 
 弹窗的实现效果是点击某个存在的点模型后在点的右侧打开，原理是通过获取点击点的`屏幕坐标`，将坐标的`y`和`x`分别赋值给`div`的`top`和`left`属性。我们现在要先拿到屏幕坐标。
 
-![28.png](..%2F..%2Fpublic%2Fimg%2F28.png)
+![28.png](images%2FVue%E4%B8%8A%E4%BD%BF%E7%94%A8cesium%E5%BC%80%E5%8F%91%E4%B8%89%E7%BB%B4%E5%9C%B0%E5%9B%BE%2F28.png)
 
-![29.png](..%2F..%2Fpublic%2Fimg%2F29.png)
+![29.png](images%2FVue%E4%B8%8A%E4%BD%BF%E7%94%A8cesium%E5%BC%80%E5%8F%91%E4%B8%89%E7%BB%B4%E5%9C%B0%E5%9B%BE%2F29.png)
 
 
 
@@ -403,11 +403,11 @@ label: {
 
 此处用到了cesiumAPI的`Sence`
 
-![30.png](..%2F..%2Fpublic%2Fimg%2F30.png)
+![30.png](images%2FVue%E4%B8%8A%E4%BD%BF%E7%94%A8cesium%E5%BC%80%E5%8F%91%E4%B8%89%E7%BB%B4%E5%9C%B0%E5%9B%BE%2F30.png)
 
-![31.png](..%2F..%2Fpublic%2Fimg%2F31.png)
+![31.png](images%2FVue%E4%B8%8A%E4%BD%BF%E7%94%A8cesium%E5%BC%80%E5%8F%91%E4%B8%89%E7%BB%B4%E5%9C%B0%E5%9B%BE%2F31.png)
 
-![32.png](..%2F..%2Fpublic%2Fimg%2F32.png)
+![32.png](images%2FVue%E4%B8%8A%E4%BD%BF%E7%94%A8cesium%E5%BC%80%E5%8F%91%E4%B8%89%E7%BB%B4%E5%9C%B0%E5%9B%BE%2F32.png)
 
 ##### 1、创建弹窗div
 
@@ -611,15 +611,15 @@ label: {
 
 预渲染`preRender`
 
-![33.png](..%2F..%2Fpublic%2Fimg%2F33.png)
+![33.png](images%2FVue%E4%B8%8A%E4%BD%BF%E7%94%A8cesium%E5%BC%80%E5%8F%91%E4%B8%89%E7%BB%B4%E5%9C%B0%E5%9B%BE%2F33.png)
 
 `scene`，我的理解，它就是渲染之后的整个`canvas`对象，地图一系列的东西都在这个`canvas`中
 
-![33.5.png](..%2F..%2Fpublic%2Fimg%2F33.5.png)
+![33.5.png](images%2FVue%E4%B8%8A%E4%BD%BF%E7%94%A8cesium%E5%BC%80%E5%8F%91%E4%B8%89%E7%BB%B4%E5%9C%B0%E5%9B%BE%2F33.5.png)
 
 `viewer.scene.preRender.addEventListener`
 
-![34.png](..%2F..%2Fpublic%2Fimg%2F34.png)
+![34.png](images%2FVue%E4%B8%8A%E4%BD%BF%E7%94%A8cesium%E5%BC%80%E5%8F%91%E4%B8%89%E7%BB%B4%E5%9C%B0%E5%9B%BE%2F34.png)
 
 Cesium虚拟场景中所有3D图形对象和状态的容器，获取在场景更新之后和场景渲染之前立即引发的事件。
 
@@ -631,13 +631,13 @@ Cesium虚拟场景中所有3D图形对象和状态的容器，获取在场景更
 
 用到的api是`new Cesium.BoundingSphere`
 
-![35.png](..%2F..%2Fpublic%2Fimg%2F35.png)
+![35.png](images%2FVue%E4%B8%8A%E4%BD%BF%E7%94%A8cesium%E5%BC%80%E5%8F%91%E4%B8%89%E7%BB%B4%E5%9C%B0%E5%9B%BE%2F35.png)
 
 然后要定位到这个初始位置，`new Cesium.Camera.flyTo`
 
-![36.png](..%2F..%2Fpublic%2Fimg%2F36.png)
+![36.png](images%2FVue%E4%B8%8A%E4%BD%BF%E7%94%A8cesium%E5%BC%80%E5%8F%91%E4%B8%89%E7%BB%B4%E5%9C%B0%E5%9B%BE%2F36.png)
 
-![37.png](..%2F..%2Fpublic%2Fimg%2F37.png)
+![37.png](images%2FVue%E4%B8%8A%E4%BD%BF%E7%94%A8cesium%E5%BC%80%E5%8F%91%E4%B8%89%E7%BB%B4%E5%9C%B0%E5%9B%BE%2F37.png)
 
 上面这2个`api`之前在讲`地图加载`的时候已经介绍过了，其实这里就是把之前的api复用一下。
 
@@ -682,7 +682,7 @@ init() {
     },
 ```
 
-![38.gif](..%2F..%2Fpublic%2Fimg%2F38.gif)
+![38.gif](images%2FVue%E4%B8%8A%E4%BD%BF%E7%94%A8cesium%E5%BC%80%E5%8F%91%E4%B8%89%E7%BB%B4%E5%9C%B0%E5%9B%BE%2F38.gif)
 
 
 
@@ -1141,13 +1141,13 @@ export default {
 
 实现效果：
 
-![39.gif](..%2F..%2Fpublic%2Fimg%2F39.gif)
+![39.gif](images%2FVue%E4%B8%8A%E4%BD%BF%E7%94%A8cesium%E5%BC%80%E5%8F%91%E4%B8%89%E7%BB%B4%E5%9C%B0%E5%9B%BE%2F39.gif)
 
 
 
 #### 修改弹框位置
 
-![40.png](..%2F..%2Fpublic%2Fimg%2F40.png)
+![40.png](images%2FVue%E4%B8%8A%E4%BD%BF%E7%94%A8cesium%E5%BC%80%E5%8F%91%E4%B8%89%E7%BB%B4%E5%9C%B0%E5%9B%BE%2F40.png)
 
 在`GIS项目`中，一般都会在`地图的左右两侧`设置`2个容器`，这两个容器里面放的内容，一般`左边容器`里放的是`点位的列表`，或者`点位的树形结构`，对这些点位操作，比如，`点位`的`定位`，`打开弹框`等同于`在地图上操作点位图标`，还有`隐藏/显示点位`。
 
@@ -1158,7 +1158,7 @@ export default {
 
 **解决第一个问题**：让点位弹框出现在点位的正上方，上篇文章已经说了弹框实现式，出现位置的原理，看下图：
 
-![40.5.png](..%2F..%2Fpublic%2Fimg%2F40.5.png)
+![40.5.png](images%2FVue%E4%B8%8A%E4%BD%BF%E7%94%A8cesium%E5%BC%80%E5%8F%91%E4%B8%89%E7%BB%B4%E5%9C%B0%E5%9B%BE%2F40.5.png)
 
 那么这次我们只要修改这个弹框的`div`的`top`和`left`:
 
@@ -1187,7 +1187,7 @@ export default {
 ...
 ```
 
-![41.gif](..%2F..%2Fpublic%2Fimg%2F41.gif)
+![41.gif](images%2FVue%E4%B8%8A%E4%BD%BF%E7%94%A8cesium%E5%BC%80%E5%8F%91%E4%B8%89%E7%BB%B4%E5%9C%B0%E5%9B%BE%2F41.gif)
 
 
 
@@ -1251,7 +1251,7 @@ export default {
 
 最后效果：
 
-![42.gif](..%2F..%2Fpublic%2Fimg%2F42.gif)
+![42.gif](images%2FVue%E4%B8%8A%E4%BD%BF%E7%94%A8cesium%E5%BC%80%E5%8F%91%E4%B8%89%E7%BB%B4%E5%9C%B0%E5%9B%BE%2F42.gif)
 
 
 
@@ -1383,7 +1383,7 @@ addCircleRippleInit(viewer, long, lat, height) {
 
 代码中用到的圆弧图片,`red_circle.png`
 
-![43.png](..%2F..%2Fpublic%2Fimg%2F43.png)
+![43.png](images%2FVue%E4%B8%8A%E4%BD%BF%E7%94%A8cesium%E5%BC%80%E5%8F%91%E4%B8%89%E7%BB%B4%E5%9C%B0%E5%9B%BE%2F43.png)
 
 > 3. 使用在`鼠标单击的事件`中`调用圆弧特效方法`
 
@@ -1491,11 +1491,11 @@ methods: {
 
 在 `vue.config.js` 中配置本地数据的代理
 
-![44.png](..%2F..%2Fpublic%2Fimg%2F44.png)
+![44.png](images%2FVue%E4%B8%8A%E4%BD%BF%E7%94%A8cesium%E5%BC%80%E5%8F%91%E4%B8%89%E7%BB%B4%E5%9C%B0%E5%9B%BE%2F44.png)
 
 这里解释一下为什么调用这个3d模型要像调接口数据一样调用，因为cesium里面加载3d模型的方法是一个Promise
 
-![45.png](..%2F..%2Fpublic%2Fimg%2F45.png)
+![45.png](images%2FVue%E4%B8%8A%E4%BD%BF%E7%94%A8cesium%E5%BC%80%E5%8F%91%E4%B8%89%E7%BB%B4%E5%9C%B0%E5%9B%BE%2F45.png)
 
 加载模型方法代码如下
 
@@ -1519,7 +1519,7 @@ methods: {
   }
 ```
 
-![46.gif](..%2F..%2Fpublic%2Fimg%2F46.gif)
+![46.gif](images%2FVue%E4%B8%8A%E4%BD%BF%E7%94%A8cesium%E5%BC%80%E5%8F%91%E4%B8%89%E7%BB%B4%E5%9C%B0%E5%9B%BE%2F46.gif)
 
 模型是加载出来了，但是位置不太对，模型出现在了空中，这是为什么？ 理由也很简单，
 
@@ -1529,7 +1529,7 @@ methods: {
 
 调整3dtiles位置 本质是通过 **矩阵运算** 来实现的
 
-![47.png](..%2F..%2Fpublic%2Fimg%2F47.png)
+![47.png](images%2FVue%E4%B8%8A%E4%BD%BF%E7%94%A8cesium%E5%BC%80%E5%8F%91%E4%B8%89%E7%BB%B4%E5%9C%B0%E5%9B%BE%2F47.png)
 
 ```js
     // 创建平移矩阵方法一
@@ -1569,11 +1569,11 @@ function changeHeight(height) {
 
 调整3d模型的位置
 
-![48.png](..%2F..%2Fpublic%2Fimg%2F48.png)
+![48.png](images%2FVue%E4%B8%8A%E4%BD%BF%E7%94%A8cesium%E5%BC%80%E5%8F%91%E4%B8%89%E7%BB%B4%E5%9C%B0%E5%9B%BE%2F48.png)
 
 设置定位
 
-![49.png](..%2F..%2Fpublic%2Fimg%2F49.png)
+![49.png](images%2FVue%E4%B8%8A%E4%BD%BF%E7%94%A8cesium%E5%BC%80%E5%8F%91%E4%B8%89%E7%BB%B4%E5%9C%B0%E5%9B%BE%2F49.png)
 
 在这张图上，我们可以看到，它这个是3d 笛卡尔坐标，我们常态下都是对120.xx  30.xxx 这种形式的经纬度比较熟悉。
 
